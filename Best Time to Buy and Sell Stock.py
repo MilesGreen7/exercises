@@ -1,13 +1,11 @@
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
+        bestPrice = prices[0]
         maxMoney = 0
-        tempSum = 0
         for i in range(1, len(prices)):
-            diff = prices[i] - prices[i - 1]
-            if diff > tempSum + diff:
-                tempSum = diff
-            else:
-                tempSum += diff
-            if tempSum > maxMoney:
-                maxMoney = tempSum
+            temp = prices[i] - bestPrice
+            if prices[i] < bestPrice:
+                bestPrice = prices[i]
+            elif temp > maxMoney:
+                maxMoney = temp
         return maxMoney
