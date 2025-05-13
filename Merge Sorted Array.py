@@ -3,15 +3,20 @@ class Solution:
         """
         Do not return anything, modify nums1 in-place instead.
         """
-        if m == 0:
-            nums1 = nums2
-            return
-        if n == 0:
-            return
+        index1 = m - 1
+        index2 = -1
+        indexInsert = -1
 
-        index1 = 0
-        index2 = 0
-        indexInsert = m
-
-
+        while index1 >= 0 and abs(index2) <= n:
+            if nums2[index2] > nums1[index1]:
+                nums1[indexInsert] = nums2[index2]
+                index2 = index2 - 1
+            else:
+                nums1[indexInsert] = nums1[index1]
+                index1 = index1 - 1
+            indexInsert = indexInsert - 1
         
+        while abs(index2) <= n:
+            nums1[indexInsert] = nums2[index2]
+            indexInsert = indexInsert - 1
+            index2 = index2 - 1
