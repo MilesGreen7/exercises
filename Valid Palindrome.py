@@ -13,4 +13,5 @@ class Solution:
                 return False
             index1 += 1
             index2 -= 1
-            
+        return True
+        
