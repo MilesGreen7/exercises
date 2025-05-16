@@ -7,4 +7,6 @@ class Solution:
                     i += 1
             else:
                 return True
+        if i >= len(s):
+            return True
         return False
