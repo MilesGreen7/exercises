@@ -18,5 +18,6 @@ class Solution:
                     i = nextIndex - 1
                     nextIndex = None
                     
+            i += 1
         return -1
         
