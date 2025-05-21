@@ -8,4 +8,6 @@ class Solution:
             maxWater = max(maxWater, tempWater)
             if height[leftPtr] > height[rightPtr]:
                 rightPtr -= 1
+            else:
+                leftPtr += 1
         return maxWater
