@@ -15,3 +15,5 @@ class Solution:
                 arr.append(c)
         if len(arr) == 0:
             return True
+        else:
+            return False
